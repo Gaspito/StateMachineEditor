@@ -1,0 +1,19 @@
+QDMContentWidget { background: transparent; }
+QDMContentWidget QLabel { color: rgba(255, 255, 255, 255); }
+AddItemWindow {
+    background: rgba(0, 0, 0, 100);
+    border-style: outset;
+    border-width: 3px;
+    border-radius: 10px;
+    border-color: rgb(80, 80, 80);
+}
+AddItemWindow QLabel { color: rgba(255, 255, 255, 255); }
+QTestLinkProxy { background: transparent; }
+QTestLinkProxy QLabel {
+    background-color: rgba(100, 0, 0, 255);
+    color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: rgb(150, 0, 0);
+}

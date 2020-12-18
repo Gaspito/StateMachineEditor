@@ -1,0 +1,13 @@
+ADD_NODE type:Event x:-174.0 y:-124.0 name:Start
+
+ADD_NODE type:State x:218.0 y:-110.0 name:Idle
+
+ADD_NODE type:Event x:217.0 y:46.0 name:Some_Event
+ADD_NODE type:Test x:241.0 y:236.0 name:Some_Test
+ADD_NODE type:State x:528.0 y:181.0 name:If_true
+ADD_NODE type:State x:528.0 y:381.0 name:If_false
+ADD_LINK type:Direct input:1.flow_left output:0.flow_right 
+ADD_LINK type:Direct input:2.flow_up output:1.flow_down 
+ADD_LINK type:Direct input:3.flow_up output:2.flow_down 
+ADD_LINK type:Test input:4.flow_left output:3.flow_right_2 name:Yes 
+ADD_LINK type:Test input:5.flow_left output:3.flow_right_3 name:No 

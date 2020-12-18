@@ -1,0 +1,32 @@
+ADD_NODE type:State x:-103.0 y:-258.0 name:Idle
+
+ADD_NODE type:State x:-229.29999999999995 y:294.60000000000014 name:Approach
+
+ADD_NODE type:Event x:-104.00000000000001 y:-479.20000000000005 name:Start
+
+ADD_NODE type:Event x:224.8 y:112.00000000000003 name:Player_in_attack_range
+
+ADD_NODE type:State x:225.59999999999997 y:-76.80000000000001 name:Attack
+
+ADD_NODE type:Event x:227.2 y:-266.4 name:After_Attack_Anim
+
+ADD_NODE type:Event x:-103.20000000000002 y:-86.4 name:Player_looks_away
+
+ADD_NODE type:Test x:-78.4 y:80.80000000000001 name:Detect_Player
+
+ADD_NODE type:State x:-400.4000000000001 y:78.0 name:Patrol
+
+ADD_NODE type:Event x:-671.2 y:72.09999999999997 name:Player_looks_at_this
+
+ADD_LINK type:Direct input:0.flow_up output:2.flow_down 
+ADD_LINK type:Direct input:4.flow_down output:3.flow_up 
+ADD_LINK type:Direct input:5.flow_down output:4.flow_up 
+ADD_LINK type:Direct input:0.flow_right output:5.flow_left 
+ADD_LINK type:Direct input:6.flow_up output:0.flow_down 
+ADD_LINK type:Direct input:7.flow_up output:6.flow_down 
+ADD_LINK type:Direct input:0.flow_left output:9.flow_up 
+ADD_LINK type:Direct input:9.flow_right output:8.flow_left 
+ADD_LINK type:Direct input:9.flow_down output:1.flow_left 
+ADD_LINK type:Direct input:3.flow_down output:1.flow_right 
+ADD_LINK type:Test input:8.flow_right output:7.flow_left name:No 
+ADD_LINK type:Test input:1.flow_up output:7.flow_down name:Yes 

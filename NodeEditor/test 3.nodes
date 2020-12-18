@@ -1,0 +1,3 @@
+ADD_NODE type:State x:-51.0 y:-216.0 name:Name
+ADD_NODE type:Event x:-20.0 y:-63.0 name:New_Event
+ADD_LINK type:Direct input:1.flow_up output:0.flow_down 

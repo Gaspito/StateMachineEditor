@@ -1,0 +1,3 @@
+ADD_NODE type:Event x:-174.0 y:-124.0 name:Start
+ADD_NODE type:State x:218.0 y:-110.0 name:Idle
+ADD_LINK type:Direct input:1.flow_left output:0.flow_right 
