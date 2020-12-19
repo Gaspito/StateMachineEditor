@@ -10,10 +10,22 @@ if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
 if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
     PyQt5.QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
+IS_THIRD_PARTY = False
+
 if __name__ == '__main__':
     print("Running Node Editor...")
+
+    args = sys.argv
+    if len(args) > 0:
+        print("\trunning with arguments: {0}".format(args))
+        if "thirdpartycontrol" in args:
+            IS_THIRD_PARTY = True
+            print("Control lend to third party application")
+            print("Use command lines to use the editor")
+
     app = QApplication(sys.argv)
 
+    NodeEditorWnd.IS_THIRD_PARTY = IS_THIRD_PARTY
     wnd = NodeEditorWnd()
 
     sys.exit(app.exec_())

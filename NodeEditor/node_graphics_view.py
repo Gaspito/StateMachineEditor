@@ -1,7 +1,7 @@
 from PyQt5.QtCore import Qt, QEvent, QPointF
 from PyQt5.QtGui import QPainter, QMouseEvent
 from PyQt5.QtWidgets import QGraphicsView
-from PyQt5.uic.properties import QtGui
+import PyQt5.QtGui
 
 import node_link
 import node_socket
@@ -179,7 +179,7 @@ class QDMGraphicsView(QGraphicsView):
     def get_item_at_cursor(self, event):
         pos = event.pos()
         obj = self.itemAt(pos)
-        print("Object at cursor: {0}".format(obj))
+        if DEBUG: print("Object at cursor: {0}".format(obj))
         return obj
 
     def begin_drag_link(self, socket):
@@ -227,7 +227,7 @@ class QDMGraphicsView(QGraphicsView):
     def accept_add_item_drop(self, event):
         drop = AddItemWindow.DRAG_ITEM
         if drop is not None:
-            print("Accepted drop item {0}".format(AddItemWindow.DRAG_ITEM))
+            if DEBUG: print("Accepted drop item {0}".format(AddItemWindow.DRAG_ITEM))
             if drop is Node or issubclass(drop, Node):
                 newNode = drop(self.grScene.scene)
                 cursorPos = self.mapToScene(event.pos())

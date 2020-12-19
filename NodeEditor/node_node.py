@@ -22,7 +22,7 @@ class Node:
         self.content = None
         self.create_content()
 
-        self.grNode = None
+        self.grNode: QDMGraphicsNode = None
         self.create_graphics()
 
         self.scene.addNode(self)
